@@ -8,7 +8,6 @@ struct MarketParameters
 	double risk_rate;
 	double cycles;
 	int iter_per_cycle;
-	double simulations_count;
 
 	MarketParameters():
 		initial_price(100),
@@ -16,7 +15,15 @@ struct MarketParameters
 		volatility(0.2),
 		risk_rate(0.05),
 		cycles(1),
-		iter_per_cycle(365),
-		simulations_count(1e6)
+		iter_per_cycle(365)
+	{ }
+
+	MarketParameters(double _initial_price, double _strike_price, double _volatility, double _risk_rate, double _cycles, int _iter_per_cycle):
+		initial_price(_initial_price),
+		strike_price(_strike_price),
+		volatility(_volatility),
+		risk_rate(_risk_rate),
+		cycles(_cycles),
+		iter_per_cycle(_iter_per_cycle)
 	{ }
 };
